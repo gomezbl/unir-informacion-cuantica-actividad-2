@@ -8,3 +8,4 @@ Esta activida la han realizado Rafael Gómez Blanes y Tomás José Álvarez Ferr
 
 Se muestran esas implementaciones en Pyhon en forma académica con el propósito de reforzar el contenido de la Actividad.
 
+Estas implementacions tienen un propósito únicamente académico.
