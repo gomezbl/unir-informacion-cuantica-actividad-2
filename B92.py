@@ -1,3 +1,6 @@
+"""
+Este código refleja la lógica esencial del protocolo B92 (como el uso de estados no ortogonales, medidas probabilísticas y presencia de resultados inconclusos).
+"""
 from qiskit import QuantumCircuit, Aer, execute
 import numpy as np
 
