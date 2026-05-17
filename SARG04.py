@@ -1,21 +1,22 @@
+"""
+Este ejemplo muestra una versión simplificada de la reconciliación en SARG04.
+A diferencia de BB84, no se conservan directamente los casos en los que Alice y Bob usaron la misma base, sino aquellos en los que Bob puede descartar uno de los estados anunciados por Alice.
+No incluye etapas completas de corrección de errores, amplificación de privacidad ni simulación de ataques prácticos.
+"""
+
 from qiskit import QuantumCircuit, Aer, execute
 import numpy as np
 
-
 n = 10
-
 
 # Bits y bases de Alice
 alice_bits = np.random.randint(2, size=n)
 alice_bases = np.random.randint(2, size=n)
 
-
 # Bases de Bob
 bob_bases = np.random.randint(2, size=n)
 
-
 circuits = []
-
 
 for i in range(n):
     qc = QuantumCircuit(1, 1)
@@ -35,19 +36,15 @@ for i in range(n):
     qc.measure(0, 0)
     circuits.append(qc)
 
-
 backend = Aer.get_backend('qasm_simulator')
 results = execute(circuits, backend, shots=1).result()
 
-
 bob_results = []
-
 
 for qc in circuits:
     counts = results.get_counts(qc)
     measured_bit = int(list(counts.keys())[0])
     bob_results.append(measured_bit)
-
 
 # Reconciliación simplificada tipo SARG04
 # Alice anuncia pares de estados no ortogonales.
@@ -57,9 +54,7 @@ for qc in circuits:
 key_alice = []
 key_bob = []
 
-
 for i in range(n):
-
     # Estado enviado por Alice:
     # 0 -> |0>, 1 -> |1>, 2 -> |+>, 3 -> |->
     sent_state = alice_bits[i] + 2 * alice_bases[i]
@@ -100,7 +95,5 @@ for i in range(n):
 
         key_alice.append(alice_bits[i])
         key_bob.append(inferred_bit)
-
-
 print("Clave de Alice:", key_alice)
 print("Clave de Bob:", key_bob)
