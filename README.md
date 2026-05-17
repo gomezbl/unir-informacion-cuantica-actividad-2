@@ -7,3 +7,4 @@ En el contexto de la Actividad 2 (grupal) para la asignatura Información Cuánt
 Esta activida la han realizado Rafael Gómez Blanes y Tomás José Álvarez Ferrer.
 
 Se muestran esas implementaciones en Pyhon en forma académica con el propósito de reforzar el contenido de la Actividad.
+
