@@ -1,3 +1,6 @@
+"""
+En este ejemplo se puede apreciar la generación de estados entrelazados, la medición de bases aleatorias, el sifting de la clave y la estimación básica del QBER.
+"""
 from qiskit import QuantumCircuit, Aer, execute
 import numpy as np
 
