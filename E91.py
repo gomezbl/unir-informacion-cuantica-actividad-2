@@ -1,3 +1,8 @@
+"""
+Este ejemplo muestra la generación de entrelazamiento (estados de Bell), así como la medición en bases aleatorias y la extracción de clave a partir de correlacionales.
+hay que tener en cuenta que no incluye el cálculo explícito del parámetro CHSH ni la validación experimental de la desigualdad de Bell, que serían necesarios para una implementación completa del protocolo.
+"""
+
 from qiskit import QuantumCircuit, Aer, execute
 import numpy as np
 
