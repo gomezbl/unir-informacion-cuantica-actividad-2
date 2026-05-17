@@ -1,16 +1,16 @@
+"""
+El siguiente ejemplo muestra una representación simplificada de DPS-QKD utilizando diferencias de fase binarias.
+El código no reproduce una implementación óptica real, sino únicamente la lógica básica de codificación y comparación de fases.
+"""
 import numpy as np
 
-
 n = 10
-
 
 # Bits generados por Alice
 alice_bits = np.random.randint(2, size=n)
 
-
 # Fases asociadas
 phases = []
-
 
 for bit in alice_bits:
     if bit == 0:
@@ -18,10 +18,8 @@ for bit in alice_bits:
     else:
         phases.append(np.pi)
 
-
 # Comparación de diferencias de fase
 detected_bits = []
-
 
 for i in range(1, n):
     delta_phase = phases[i] - phases[i - 1]
@@ -30,7 +28,6 @@ for i in range(1, n):
         detected_bits.append(0)
     else:
         detected_bits.append(1)
-
 
 print("Bits de Alice:", alice_bits.tolist())
 print("Bits detectados:", detected_bits)
